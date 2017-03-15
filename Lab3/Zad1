@@ -1,0 +1,30 @@
+ZAD1
+
+Maximize
+d
+
+Subject To
+2 A + B+ C -d >= 0
+3 A + B+ C -d>= 0
+5 A + 2 B+ C -d>= 0
+4 A + 3 B+ C- d>=0
+5 A + 3 B+ C- d>=0
+2 A + 3 B+ C-d>=0
+A+ 2 B+C+d <=0
+2 A+ 4 B+C+d<=0
+A+ 4.5 B+C+d<=0
+3 A+ 5 B+C+d<=0
+A+ 6 B+C+d<=0
+
+Bounds
+A>=-100
+B>=-100
+C>=-100
+
+Generals
+A
+B
+C
+d
+
+End
