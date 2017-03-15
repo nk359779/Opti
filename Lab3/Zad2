@@ -1,0 +1,39 @@
+#Dla prostokata
+
+Maximize
+r
+
+Subject To
+p - r >=1
+-p -r>=-6
+-q - r>=-3
+q- r>=1
+
+Bounds
+
+Generals
+p
+q
+r
+
+End
+
+#dla kwadratu
+
+Maximize
+r
+
+Subject To
+p - r >=0
+-p -r>=-6
+-q - r>=-6
+q- r>=0
+
+Bounds
+
+Generals
+p
+q
+r
+
+End
