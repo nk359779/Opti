@@ -1,0 +1,33 @@
+# Maksymalne koło wpisane
+
+# Dane problemu
+
+Cz = [ (2.0,1.0), (4.0,3.0), (5.0,3.0) ]
+Bi = [(1.0,6.0), (2.0,4.0), (1.0,2.0)]
+
+# Rozwiązanie problemu
+
+p = MixedIntegerLinearProgram()
+var = p.new_variable(nonnegative=False)
+ 
+A, B, C, d = var['A'], var['B'], var['C'], var['d']
+
+p.set_objective(d)
+
+p.add_constraint(d >= 0)
+p.add_constraint(A >= -100)
+p.add_constraint(B >= -100)
+p.add_constraint(C >= -100)
+
+for i in range(len(Cz)):
+    p.add_constraint(A * Cz[i][0] + B * Cz[i][1] + C >= d)
+for i in range(len(Bi)):
+    p.add_constraint(A * Bi[i][0] + B * Bi[i][1] + C <= -d)
+# Rozwiązanie problemu
+
+print 'Optymalna wartość funkcji celu = ', p.solve()
+print 'A=', p.get_values(A), ' B=', p.get_values(B), ' C=', p.get_values(C), ' d=', p.get_values(d)
+
+# Wizualizacja
+list_plot(Bi, plotjoined=False, color='red')+list_plot(Cz, plotjoined=False, color='black')+plot(-p.get_values(A)/p.get_values(B) * x -p.get_values(C)/p.get_values(B))
+##line([(0, -p.get_values(C)/p.get_values(B)), (-p.get_values(C)/p.get_values(A), 0)])
