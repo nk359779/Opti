@@ -1,0 +1,16 @@
+Dla danych:
+
+A = matrix([[3,1,2,4,1,1,0,0],[1,1,1,2,0,6,5,1]])
+b = vector([1,1])
+c = vector([-1,0,0,0,3,2,27,0])
+
+Wynik Sage: 
+Wartosc maksymalna = 42/5
+Wektor na ktorym jest osiagana = (0, 0, 0, 0, 1, 0, 1/5, 0)
+
+Wynik (Solver problemów liniowych):
+*1: obj = 8.4  infeas = 0 (0)
+OPTIMAL SOLUTION FOUND
+{"x1":0,"x5":1,"x6":0,"x7":0.2,"x2":0,"x3":0,"x4":0,"x8":0}
+
+Więc wyszło tak samo. OK
