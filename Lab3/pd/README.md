@@ -1,4 +1,4 @@
-Autorzy: Natalia Kwiecień i Jakub Dudziński
+Autorzy: Jakub Dudziński i  Natalia Kwiecień
 
 Zadanie domowe- kolejne zastosowanie algorytmu przeglądającego wszystkie wierzchołki (Sage) :
 
