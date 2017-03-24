@@ -1,0 +1,10 @@
+Dla danych:
+
+A = matrix([[1,1],[1,1]])
+b = vector([1,2])
+c = vector([1,1])
+
+Wynik Sage: 
+INFEASIBLE
+
+Ok, sprzeczny układ równań nie dał wyniku.
