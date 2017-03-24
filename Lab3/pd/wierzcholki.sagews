@@ -7,6 +7,7 @@ def findsubsets(S,m): #funkcja ktora zwraca liste wszystkich m-elementowych podz
     return list(itertools.combinations(S, m))
 #zakladamy ze kolumn jest zawsze wiecej niz wierszy (problem dobrze zdefiniowany)
 #i wiersze sa lnz
+#zakładamy ponadto, że maksimum przyjmowane jest w ktorymś z wierzchołków
 lw = len(list(A))
 lk = len(list(A[0]))
 v = []
