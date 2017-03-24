@@ -1,15 +1,17 @@
-import itertools
-def findsubsets(S,m):
-    return list(itertools.combinations(S, m))
-
 A = matrix([[-1,1,1,0,0],[1,0,0,1,0],[0,1,0,0,1]])
 b = vector([1,3,2])
 c = vector([1,1,0,0,0])
+
+import itertools
+def findsubsets(S,m): #funkcja ktora zwraca liste wszystkich m-elementowych podzbiorow S
+    return list(itertools.combinations(S, m))
+#zakladamy ze kolumn jest zawsze wiecej niz wierszy (problem dobrze zdefiniowany)
+#i wiersze sa lnz
 lw = len(list(A))
 lk = len(list(A[0]))
 v = []
 S = set(i for i in range(0,lk))
-submatrices = findsubsets(S,lw)
+submatrices = findsubsets(S,lw) #lista numerow kolumn, z ktorych da sie utworzyc macierze lw x lw
 for item in submatrices:
     Ak = []
     for j in item:
@@ -19,7 +21,7 @@ for item in submatrices:
         vk = Ak.solve_right(b)
         template = list(0 for i in range(0,lk))
         l = 0
-        dodatnie = true
+        dodatnie = true #sprawdzenie czy wektor rozwiazania jest dodatni (w zalozeniu musi byc)
         for j in item:
             template[j] = vk[l]
             if vk[l] < 0:
