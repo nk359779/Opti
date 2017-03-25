@@ -39,5 +39,5 @@ else:
         if vector(item)*c > maxvalue:
             maxvalue = vector(item)*c
             maxv = vector(item)
-    print "Wartosc maksymalna = " + str(maxvalue)
+    print "Wartosc maksymalna = " + str(maxvalue) #Jeśli wartość maksymalna jest przyjmowana w więcej niż jednym punkcie to podajemy jeden z nich
     print "Wektor na ktorym jest osiagana = " + str(maxv)
