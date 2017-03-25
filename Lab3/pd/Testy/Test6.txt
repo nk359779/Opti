@@ -1,0 +1,16 @@
+Dla danych:
+
+A = matrix([[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0]])
+b = vector([1,1,1,1])
+c = vector([1,1,1,1,-1])
+
+Wynik Sage:
+Wartosc maksymalna = 4
+Wektor na ktorym jest osiagana = (1, 1, 1, 1, 0)
+
+Wynik solvera problemów liniowych:
+0: obj = 4  infeas = 0.0
+OPTIMAL SOLUTION FOUND BY LP PREPROCESSOR
+{"x1":1,"x2":1,"x3":1,"x4":1,"x5":0}
+
+Więc wyszło to samo. Ok
