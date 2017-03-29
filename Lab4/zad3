@@ -5,8 +5,6 @@ P = InteractiveLPProblemStandardForm(A, b, c, ["x1", "x2"])
 show(P)
 D = P.initial_dictionary()
 show(D)
-
-
 print D.possible_entering()
 D.enter("x1")
 print D.possible_leaving()
@@ -18,3 +16,12 @@ D.enter("x2")
 print D.possible_leaving()
 print "Problem jest nieograniczony. Mozemy wziac dowolnie duze x2 i np x1=1 + x2"
 P.plot()
+
+#gotowa metoda sympleks Sage
+A = ([1, -1], [-1, 1])
+b = (1, 2)
+c = (1,0)
+P = InteractiveLPProblemStandardForm(A, b, c, ["x1", "x2"])
+show(P)
+P.run_simplex_method()
+#P.plot()
