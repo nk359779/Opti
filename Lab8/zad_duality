@@ -1,0 +1,9 @@
+M=[[2, 3, 0, 6], [-2, 4, 3, 0], [3, 2, -2, -4]]
+b = [6, 3/2, 4]
+c = [2, 8, -1, -2]
+P=InteractiveLPProblemStandardForm(M, b, c)
+show(P)
+D=P.dual()
+show(P.run_simplex_method())
+show(D)
+show(D.standard_form().run_simplex_method())
