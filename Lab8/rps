@@ -1,0 +1,11 @@
+A=[1, 1, 1]
+M=matrix([[0, -1, 1], [1, 0, -1], [-1, 1, 0]])
+b = [1]
+X = vector([1/2, 1/2, 0])
+print X
+print M
+c = X * M
+print c
+P=InteractiveLPProblem(A, b, c, constraint_type="==", variable_type=">=")
+show(P)
+P.standard_form().run_simplex_method()
