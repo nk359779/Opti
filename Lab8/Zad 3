@@ -1,5 +1,5 @@
 #M = matrix([[0, -1, 1], [1, 0, -1], [-1, 1, 0]]) # RPS
-M = matrix([[0, 0, 1], [0, 0, 0], [-1, 0, 0]]) # Blotto
+M = matrix([[0, 0, 1], [0, 0, 0], [-1, 0, 0]]) # Blotto Strategie (kolejno) 2,2,2; 1,2,3; 1,1,4
 A = list([[-1,-1,-1]]) +  list(M)
 print M
 print A
