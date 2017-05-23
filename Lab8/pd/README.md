@@ -1,4 +1,4 @@
-Autorzy: Jakub Dudziński i Natalia Kwiecień
+Autorzy: Natalia Kwiecień i Jakub Dudziński
 
 Zadanie domowe - rozwiązanie problemu dualnego dla gry Colonel Blotto
 
