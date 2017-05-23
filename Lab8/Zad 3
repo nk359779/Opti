@@ -3,7 +3,7 @@ M = matrix([[0, 0, 1], [0, 0, 0], [-1, 0, 0]]) # Blotto Strategie (kolejno) 2,2,
 #M = matrix([[1, -1], [-1, 1]]) #matching pennies
 #M = matrix([[0, -1], [1, 0], [-1, 1]]) #modified RPS
 
-#Problem: Znalezienie równowagi Nasha w grze (o sumie zerowej) o macierzy wypłat M.
+#Problem: Znalezienie (jakiejś) równowagi Nasha w grze (o sumie zerowej) o macierzy wypłat M.
 #Zamieniamy problem na problem dualny
 A = list([[-1 for i in range(M.ncols())]]) +  list(M) #odejmujemy zmienną x0 od równań
 A = matrix(A)
@@ -22,11 +22,11 @@ solution = vector(solution[1:len(solution)])
 print str(L_var[1:len(L_var)]) + " = " + str(solution)
 #szukamy naj;epszej odpowiedzi gracza 2. <- podobnie jak szukanie optymalnej strategii dla gracza 1
 c = solution * M
-L_var = ["y%i" %i for i in range(A.ncols())]
+L_var = ["y%i" %i for i in range(A.nrows())]
 L_var = L_var[1:len(L_var)]
 A = [1 for i in range(A.nrows() - 1)]
 b=[1]
-P = InteractiveLPProblem(A, b, c, constraint_type="==", variable_type=">=", problem_type="min")
+P = InteractiveLPProblem(A, b, c, L_var, constraint_type="==", variable_type=">=", problem_type="min")
 show(P)
 solution = P.optimal_solution()
 print str(L_var) + " = " + str(solution)
