@@ -3,14 +3,10 @@ M = matrix([[0, 0, 1], [0, 0, 0], [-1, 0, 0]]) # Blotto Strategie (kolejno) 2,2,
 #M = matrix([[1, -1], [-1, 1]]) #matching pennies
 #M = matrix([[0, -1], [1, 0], [-1, 1]]) #modified RPS
 A = list([[-1 for i in range(M.ncols())]]) +  list(M)
-print A
 A = matrix(A)
 A=A.T
-
 A = list(A) + list([[0] +[1 for i in range(A.ncols() - 1)]])
-print A
 A = matrix(A)
-print A
 c = [1] + [0 for i in range(A.ncols() - 1)]
 b = [0 for i in range(A.nrows() - 1)] + [1]
 var_type = [""] + [">=" for i in range(A.ncols() - 1)]
@@ -19,6 +15,5 @@ L_var = ["x%i" %i for i in range(A.ncols())]
 P = InteractiveLPProblem(A, b, c, L_var, constraint_type = constr_type, variable_type = var_type)
 show(P)
 solution = P.optimal_solution()
-print solution
 solution = matrix(solution[1:len(solution)])
-print solution
+print str(L_var[1:len(L_var)]) + " = " + str(solution)
