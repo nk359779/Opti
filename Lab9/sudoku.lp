@@ -1,4 +1,5 @@
-Maximize 0
+Maximize 
+0 x1,1,1
 
 
 Subject To
