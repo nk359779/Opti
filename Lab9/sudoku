@@ -1,0 +1,75 @@
+print "Maximize 0"
+print "\n"
+print "Subject To"
+
+sp = ""
+sk = ""
+sw = ""
+for i in range(1,10):
+    for j in range(1,10):
+        for k in range(1,10):
+                sp += "x" + str(i) + "," + str(j) + "," + str(k) + " + "
+                sw += "x" + str(k) + "," + str(i) + "," + str(j) + " + "
+                sk += "x" + str(i) + "," + str(k) + "," + str(j) + " + "
+        print sp[0:len(sp)-2] + "= 1"
+        print sw[0:len(sw)-2] + "= 1"
+        print sk[0:len(sk)-2] + "= 1"
+        sp = ""
+        sw = ""
+        sk = ""
+s11 = ""  
+s12 = ""
+s13 = ""  
+s21 = ""
+s22 = ""  
+s23 = ""
+s31 = ""  
+s32 = ""
+s33 = ""  
+for i in range(1,10):
+    for j in range(1,4):
+        for k in range(1,4):
+            s11 += "x" + str(j) + "," + str(k) + "," + str(i) + " + "
+            s12 += "x" + str(j+3) + "," + str(k) + "," + str(i) + " + "
+            s13 += "x" + str(j+6) + "," + str(k) + "," + str(i) + " + "
+            s21 += "x" + str(j) + "," + str(k+3) + "," + str(i) + " + "
+            s22 += "x" + str(j+3) + "," + str(k+3) + "," + str(i) + " + "
+            s23 += "x" + str(j+6) + "," + str(k+3) + "," + str(i) + " + "
+            s31 += "x" + str(j) + "," + str(k+6) + "," + str(i) + " + "
+            s32 += "x" + str(j+3) + "," + str(k+6) + "," + str(i) + " + "
+            s33 += "x" + str(j+6) + "," + str(k+6) + "," + str(i) + " + "
+    print s11[0:len(s11)-2] + "= 1"
+    print s12[0:len(s12)-2] + "= 1"
+    print s13[0:len(s13)-2] + "= 1"
+    print s21[0:len(s21)-2] + "= 1"
+    print s22[0:len(s22)-2] + "= 1"
+    print s23[0:len(s23)-2] + "= 1"
+    print s31[0:len(s31)-2] + "= 1"
+    print s32[0:len(s32)-2] + "= 1"
+    print s33[0:len(s33)-2] + "= 1"
+    s11 = ""
+    s12 = ""
+    s13 = ""
+    s21 = ""
+    s22 = ""
+    s23 = ""
+    s31 = ""
+    s32 = ""
+    s33 = ""
+
+print "\n"
+print "Bounds"
+for i in range(1,10):
+    for j in range(1,10):
+        for k in range(1,10):
+            print "0 <= x" + str(i) + "," + str(j) + "," + str(k) + " <= 1"
+
+print "\n"
+print "General"
+for i in range(1,10):
+    for j in range(1,10):
+        for k in range(1,10):
+            print "x" + str(i) + "," + str(j) + "," + str(k)
+
+print "\n"
+print "End"
