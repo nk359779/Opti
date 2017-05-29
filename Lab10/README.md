@@ -7,12 +7,12 @@ INTEGER OPTIMAL SOLUTION FOUND
 {"x11":0,"x13":0,"x16":1,"x21":0,"x24":1,"x32":0,"x33":0,"x35":1,"x41":1,"x44":0,"x47":0,"x52":0,"x57":1,"x62":1,"x65":0,"x66":0,"x73":1,"x77":0},
 
 gdzie x11 oznacza krawędź łączącą punkt A (pierwszy z góry) z punktem q (pierwszy z dołu), x23 - krawędź łączącą B z s itd.
-Znalezione rozwiązanie jest, jakimś, rozwiązaniem optymalnym (wartośc funkcji celu dla niego wynosi 7, choc różnym od tego na rysunku w książce.
+Znalezione rozwiązanie jest jakimś rozwiązaniem optymalnym (wartośc funkcji celu dla niego wynosi 7), choc różnym od tego na rysunku w książce.
 
 Następnie znaleźliśmy problem dualny - za pomocą skryptu Zad3_dual.
-Zmienne w problemie dualnym należy interpretować następująco - zmienne od y1 do y14 to określenie czy dany wierzchołek należy wziąć do minimalnego pokrycia (wartość zmiennej 1), czy też go nie brać (wartośc zmiennej 0).
+Zmienne w problemie dualnym należy interpretować następująco - zmienne od y1 do y14 to określenie czy dany wierzchołek należy wziąć do minimalnego pokrycia (wartość zmiennej = 1), czy też go nie brać (wartośc zmiennej = 0).
 Zmienne y1 do y14 odpowiadają kolejno wierzchołkom A, B, ..., q, r, ..., w.
-Wartością optymalną znalezioną przez solver jest 7 i (wg. wikipedii) jest to istotnie rozwiązanie optymalne bo dla grafu dwudzielnego jest to min z liczby wierzchołków "u góry grafu" i "u dołu grafu" czyli min(7,7)=7.
+Wartością optymalną znalezioną przez solver jest 7 i (wg. wikipedii) jest to istotnie rozwiązanie optymalne, bo dla grafu dwudzielnego jest to min z liczby wierzchołków "u góry grafu" i "u dołu grafu", czyli min(7,7) = 7.
 Znalezione rozwiązanie optymalne (za pomocą solvera z danymi z pliku Zad3_dual.lp) to:
 
 INTEGER OPTIMAL SOLUTION FOUND
