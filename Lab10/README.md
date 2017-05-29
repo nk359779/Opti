@@ -11,7 +11,7 @@ Następnie znaleźliśmy problem dualny - za pomocą skryptu Zad3_dual.
 Zmienne w problemie dualnym należy interpretować następująco - zmienne od y1 do y14 to określenie czy dany wierzchołek należy wziąć do minimalnego pokrycia (wartość zmiennej 1), czy też go nie brać (wartośc zmiennej 0).
 Zmienne y1 do y14 odpowiadają kolejno wierzchołkom A, B, ..., q, r, ..., w.
 Wartością optymalną znalezioną przez solver jest 7 i (wg. wikipedii) jest to istotnie rozwiązanie optymalne bo dla grafu dwudzielnego jest to min z liczby wierzchołków "u góry grafu" i "u dołu grafu" czyli min(7,7)=7.
-Znalezione rozwiązanie optymalne (za pomocą solvera z danymi z pliku zad3_dual.lp) to:
+Znalezione rozwiązanie optymalne (za pomocą solvera z danymi z pliku Zad3_dual.lp) to:
 INTEGER OPTIMAL SOLUTION FOUND
 {"y1":1,"y2":1,"y3":1,"y4":1,"y5":1,"y6":1,"y7":1,"y8":0,"y9":0,"y10":0,"y11":0,"y12":0,"y13":0,"y14":0,"y15":0,"y16":0,"y17":0,"y18":0,"y19":0,"y20":0,"y21":0,"y22":0,"y23":0,"y24":0,"y25":0,"y26":0,"y27":0,"y28":0,"y29":0,"y30":0,"y31":0,"y32":0}
 Rozwiązanie jest istotnie pokryciem (sprawdzone za pomocą kartki i papieru). Do naszego pokrycia bierzemy wierzchołki od A do G (co jest jednym z dwóch oczywistych rozwiązań).
