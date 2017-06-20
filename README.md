@@ -15,3 +15,5 @@ Projekt 1: https://github.com/nk359779/Optymalizacja/blob/master/Projekt1 (wraz 
 Projekt 2: https://github.com/nk359779/Optymalizacja/tree/master/Projekt%202 (wraz z Jakubem Dudzińskim)
 
 Projekt 3: https://github.com/nk359779/Optymalizacja/tree/master/Projekt%203 (wraz z Jakubem Dudzińskim)
+
+Prezentacja: https://github.com/nk359779/Optymalizacja/tree/master/Prezentacja
