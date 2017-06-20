@@ -1,14 +1,15 @@
-︠29c4b7d1-09a4-4957-b8d3-7f978797d0b0︠
+︠359a45f3-e43e-40af-a47f-5c4c6ac6abea︠
+# -*- coding: utf-8 -*-
+
 import itertools
 import numpy
 import random
 
-def match(s1,s2):
+def match(s1,s2): 
     die1 = s1[0][0]
     die2 = s2[0][0]
     call = s1
     player_call = 1
-    
     
     if call[1] == [2,4]:
         if (die1 == 4 or die1 == 1) and (die2 == 4 or die2 == 1):
@@ -39,6 +40,7 @@ def match(s1,s2):
                         call = s
                         break
             player_call = 2
+
     if call[1] == [2,4]:
         if player_call == 2:
             if (die1 == 4 or die1 == 1) and (die2 == 4 or die2 == 1):
@@ -52,7 +54,7 @@ def match(s1,s2):
     if call[1] == 'call':
         if player_call == 2:
             if call[0][0] == 2:
-                if (die1 == call[0][1] or die1 == 1) and (die2 == call[0][1] or die2 == 1)
+                if (die1 == call[0][1] or die1 == 1) and (die2 == call[0][1] or die2 == 1):
                     return 1
                 else:
                     return -1
@@ -69,12 +71,12 @@ def match(s1,s2):
             return -1
         else:
             return 1
-    
+
 A = []
 for i in range(1,3):
     for j in range(1,5):
         A += [[i, j]]
-A += ['call']    
+A += ['call']
 A = list(A)
 B = list(A)
 
@@ -87,11 +89,11 @@ A14 = []
 A21 = []
 A22 = []
 A23 = []
-    
-for e in list(itertools.product(A, B)):
+
+for e in list(itertools.product(A, B)): #kartezjanskie mnozenie wszystkich kombinacji
     if e[1][0]>=e[0][0] and e[1][1]>e[0][1]:
         if e[0] == [1,1]: 
-            A11 += [e]
+            A11 += [e] #wszystkie zagrywki zaczynajace sie od [1,1]
         elif e[0] == [1,2]:
             A12 += [e]
         elif e[0] == [1,3]:
@@ -115,9 +117,9 @@ for e11 in A11:
                 for e21 in A21:
                     for e22 in A22:
                         for e23 in A23:
-                            strat = [e11] + [e12] + [e13] + [e14] + [e21] + [e22] + [e23]
+                            strat = [e11] + [e12] + [e13] + [e14] + [e21] + [e22] + [e23] #jak gracz 1 zagra [1,1] to ja zagram coś, jak zagra [1,2],...
                             for i in range(1, 5):
-                                all_strat_2 += [[[i]] + strat]
+                                all_strat_2 += [[[i]] + strat] #dołączam do każdej pełnej zagrywki liczbe oczek na kosce
 for e12 in A12:
         for e13 in A13:
             for e14 in A14:
@@ -129,8 +131,10 @@ for e12 in A12:
                                 for j in range(1,5):
                                     for element in strat:
                                         if element[0][0] <= i and element[0][1] <= j:
-                                            strat.remove(element)
+                                            strat.remove(element) # jesli moim pierwszym ruchem jest [1,4] to muszę usunac wszystkie zagrywki zaczynajace sie od <=[1,4]
                                     all_strat_1 += [[[j]] + [[i, j]] + strat]
+
+
 all_strat_1 = numpy.unique(all_strat_1).tolist()
 
 A11 = []
@@ -144,7 +148,7 @@ A24 = []
 
 for element in all_strat_1:
     if element[0][0] == 1:
-        A11 += [element]
+        A11 += [element] #lista ze strategiami dla 1 na kostce
     if element[0][0] == 2:
         A12 += [element]
     if element[0][0] == 3:
@@ -164,18 +168,20 @@ for element in all_strat_2:
 
 all_strat_1 = []
 all_strat_2 = []
-i = 0
+
 for e11 in A11:
     for e12 in A12:
         for e13 in A13:
             for e14 in A14:
-                all_strat_1 += [[e11] + [e12] + [e13] + [e14]]
+                all_strat_1 += [[e11] + [e12] + [e13] + [e14]] #pelna strategia czyli zagrywki dla 1,2,3,4 na kostce lacznie
+
 for e21 in A21:
     for e22 in A22:
         for e23 in A23:
             for e24 in A24:
                 all_strat_2 += [[e21] + [e22] + [e23] + [e24]]
-for s1 in all_strat_1:
+
+for s1 in all_strat_1: #rozgrywamy kombinacje wszystkich meczy dla danej strategi gracza 1 i 2
     A = []
     for s2 in all_strat_2:
         a = 0
@@ -185,7 +191,7 @@ for s1 in all_strat_1:
         A += [a]
     M += [A]
 
-#Reszta przekopiowana z ktrego z labow
+#Reszta przekopiowana z ktoregos z labow
 
 A = list([[-1 for i in range(M.ncols())]]) +  list(M) #odejmujemy zmienną x0 od równań
 A = matrix(A)
