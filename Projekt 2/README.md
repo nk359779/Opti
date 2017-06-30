@@ -24,4 +24,5 @@ Ta strategia jest najlepszą odpowiedzią na wyliczoną strategię gracza 2:
 
 Razem tworzą one więc równowagę Nasha.
 
+Zaktualizowany kod znajduje się w pliku pod nazwą projekt-2-update.sagews
 
